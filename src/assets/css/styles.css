@@ -6,40 +6,48 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #6a0dad, #8a2be2);
+    background-color: #000;
+    background-image: url('../images/back.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .container {
     text-align: center;
     display: flex;
-    flex-direction: column; /* Alinha os itens verticalmente */
-    align-items: center; /* Centraliza os itens horizontalmente */
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* Adiciona padding em todas as telas */
 }
 
 .imgperfil {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Adicionado para garantir centralização */
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    overflow: hidden; /* Garante que a imagem não exceda o contêiner redondo */
-    border:1px solid #fff;
+    overflow: hidden;
+    border: 1px solid #fff;
 }
 
 .imgperfil img {
-    width: 100%; /* Ajuste para o tamanho desejado */
-    height: 100%; /* Ajuste para o tamanho desejado */
+    max-width: 100%; /* Responsivo */
+    height: auto; /* Mantém a proporção */
+    object-fit: cover;
 }
-.sobre h1{
+
+.sobre h1 {
     color: #fff;
-    font-size:larger;
+    font-size: larger;
 }
-.sobre h2{
+
+.sobre h2 {
     color: #fff;
     font-size: small;
 }
+
 .buttons {
+    display: flex;
+    flex-direction: column; /* Empilha os botões */
     margin-bottom: 20px;
 }
 
@@ -72,11 +80,35 @@ body {
 }
 
 .social-icons img {
-    width: 40px; /* Ajuste para o tamanho desejado */
-    height: 40px; /* Ajuste para o tamanho desejado */
+    width: 40px;
+    height: 40px;
     transition: transform 0.3s ease;
 }
 
 .social-icons img:hover {
-    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+    transform: scale(1.1);
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .imgperfil {
+        width: 80px;
+        height: 80px;
+    }
+
+    .sobre h1 {
+        font-size: 24px; /* Ajusta o tamanho da fonte do título */
+    }
+
+    .sobre h2 {
+        font-size: 14px; /* Ajusta o tamanho da fonte da descrição */
+    }
+
+    .button {
+        padding: 10px 15px; /* Ajusta o tamanho dos botões */
+    }
+
+    .buttons {
+        flex-direction: column; /* Botões empilhados em coluna */
+    }
 }
